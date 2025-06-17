@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -55,3 +57,15 @@ Route::get('/roles/store', [RoleController::class, 'store'])->name('roles.store'
 Route::get('/roles/{role}/show', [RoleController::class, 'show'])->name('roles.show');
 Route::get('/roles/{role}/update', [RoleController::class, 'update'])->name('roles.update');
 Route::get('/roles/{role}/delete', [RoleController::class, 'delete'])->name('roles.delete');
+
+Route::get('chats', [ChatController::class, 'index'])->name('chats');
+Route::get('chats/store', [ChatController::class, 'store'])->name('chats.store');
+Route::get('chats/{chat}/show', [ChatController::class, 'show'])->name('chats.show');
+Route::get('chats/{chat}/update', [ChatController::class, 'update'])->name('chats.update');
+Route::get('chats/{chat}/delete', [ChatController::class, 'delete'])->name('chats.delete');
+
+Route::get('messages', [MessageController::class, 'index'])->name('messages');
+Route::get('messages/store', [MessageController::class, 'store'])->name('messages.store');
+Route::get('messages/{message}/show', [MessageController::class, 'show'])->name('messages.show');
+Route::get('messages/{message}/update', [MessageController::class, 'update'])->name('messages.update');
+Route::get('messages/{message}/delete', [MessageController::class, 'delete'])->name('messages.delete');
