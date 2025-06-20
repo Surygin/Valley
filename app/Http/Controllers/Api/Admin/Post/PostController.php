@@ -8,9 +8,6 @@ use App\Http\Requests\Post\UpdateRequest;
 use App\Http\Resources\Admin\Post\IndexResource;
 use App\Http\Resources\Admin\Post\ShowResource;
 use App\Models\Post;
-use Illuminate\Contracts\Routing\ResponseFactory;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Foundation\Application;
 use Illuminate\Http\Response;
 
 class PostController extends Controller
