@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Admin\Post;
+namespace App\Http\Resources\Profile;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class IndexResource extends JsonResource
+class ShowResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,13 +16,13 @@ class IndexResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
+            'name' => $this->name,
+            'surname' => $this->surname,
+            'birthday_at' => $this->birthday_at,
             'description' => $this->description,
-            'published_at' => $this->published_at,
-            'author' => $this->author,
-            'views' => $this->views,
-            'img_path' => $this->img_path,
-            'tag' => $this->tag,
+            'phone' => $this->phone,
+            'address' => $this->address,
+            'login' => $this->login,
         ];
     }
 }

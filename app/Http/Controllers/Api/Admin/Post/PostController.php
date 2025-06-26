@@ -65,7 +65,7 @@ class PostController extends Controller
         $post->delete();
 
         return response([
-            'message' => 'Deleted'
+            'message' => 'Post - Deleted'
         ], Response::HTTP_OK);
     }
 }

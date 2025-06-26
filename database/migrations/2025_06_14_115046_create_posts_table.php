@@ -16,16 +16,17 @@ return new class extends Migration
 
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('author')->index();
             $table->string('tag')->nullable();
             $table->text('img_path')->default('default.jpg');
             $table->text('content')->nullable();
             $table->dateTime('published_at')->nullable();
             $table->unsignedInteger('views')->default(0);
             $table->unsignedSmallInteger('status')->nullable();
-            $table->string('category')->nullable();
             $table->boolean('is _active')->default(true);
+            $table->foreignId('category_id')->index()->constrained('categories');
+            $table->foreignId('profile_id')->index()->constrained('profiles');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

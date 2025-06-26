@@ -15,11 +15,11 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string|min:3|max:255',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
             'author' => 'required|string|min:3|max:255',
-            'tag' => 'required|string|min:3|max:255',
+            'tag' => 'nullable|string|min:3|max:255',
             'img_path' => 'required|string|min:3|max:255',
-            'content' => 'required|string',
+            'content' => 'nullable|string',
             'published_at' => 'nullable|date',
             'status' => 'required|boolean',
             'category' => 'nullable|string',
