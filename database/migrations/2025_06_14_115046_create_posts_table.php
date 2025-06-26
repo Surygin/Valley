@@ -16,7 +16,6 @@ return new class extends Migration
 
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('tag')->nullable();
             $table->text('img_path')->default('default.jpg');
             $table->text('content')->nullable();
             $table->dateTime('published_at')->nullable();

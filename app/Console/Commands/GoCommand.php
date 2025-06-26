@@ -34,6 +34,14 @@ class GoCommand extends Command
      */
     public function handle()
     {
+
+        $post = Comment::all()->random();
+        dd($post->likes);
+//        $chat = Chat::find(6);
+//        dd($chat->messages);
+
+//        dd(Profile::all()->random()->id);
+//        dd(now());
 //        Profile::create([
 //            'name' => 'Tony',
 //            'surname' => 'Basco',
