@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('title');
             $table->foreignId('profile_id')->index()->constrained('profiles');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

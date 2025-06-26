@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('profile_id')->index()->constrained('profiles');
             $table->foreignId('post_id')->index()->constrained('posts');
             $table->string('parent')->index();
-//            $table->unsignedInteger('like')->default(0);
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

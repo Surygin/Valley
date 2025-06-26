@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('chat_id')->index()->constrained('chats');
             $table->string('content');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }
