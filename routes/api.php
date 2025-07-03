@@ -15,41 +15,12 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-//Route::resource('posts', PostController::class);
-
 Route::apiResource('posts', PostController::class);
-//Route::apiResource('categories', CategoryController::class);
-//Route::apiResource('tags', TagController::class);
-
-//Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
-//Route::get('/categories/{category}/show', [CategoryController::class, 'show'])->name('categories.show');
-//Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
-//Route::patch('/categories/{category}/update', [CategoryController::class, 'update'])->name('categories.update');
-//Route::delete('categories/{category}/delete', [CategoryController::class, 'destroy'])->name('categories.delete');
-
-//Route::get('/tags', [TagController::class, 'index'])->name('tags');
-//Route::get('/tags/{tag}/show', [TagController::class, 'show'])->name('tags.show');
-//Route::post('/tags', [TagController::class, 'store'])->name('tags.store');
-//Route::patch('/tags/{tag}/update', [TagController::class, 'update'])->name('tags.update');
-//Route::delete('tags/{tag}/delete', [TagController::class, 'destroy'])->name('tags.delete');
-
-//Route::get('/profiles', [ProfileController::class, 'index'])->name('profiles');
-//Route::get('/profiles/{profile}/show', [ProfileController::class, 'show'])->name('profiles.show');
-//Route::post('/profiles', [ProfileController::class, 'store'])->name('profiles.store');
-//Route::patch('/profiles/{profile}/update', [ProfileController::class, 'update'])->name('profiles.update');
-//Route::delete('profiles/{profile}/delete', [ProfileController::class, 'destroy'])->name('profiles.delete');
-
-//Route::get('/roles', [RoleController::class, 'index'])->name('roles');
-//Route::get('/roles/{role}/show', [RoleController::class, 'show'])->name('roles.show');
-//Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
-//Route::patch('/roles/{role}/update', [RoleController::class, 'update'])->name('roles.update');
-//Route::delete('roles/{role}/delete', [RoleController::class, 'destroy'])->name('roles.delete');
-
-//Route::get('/comments', [CommentController::class, 'index'])->name('comments');
-//Route::get('/comments/{comment}/show', [CommentController::class, 'show'])->name('comments.show');
-//Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
-//Route::patch('/comments/{comment}/update', [CommentController::class, 'update'])->name('comments.update');
-//Route::delete('comments/{comment}/delete', [CommentController::class, 'destroy'])->name('comments.delete');
+Route::apiResource('categories', CategoryController::class);
+Route::apiResource('tags', TagController::class);
+Route::apiResource('roles', RoleController::class);
+Route::apiResource('profiles', ProfileController::class);
+Route::apiResource('comments', CommentController::class);
 
 //Route::get('/chats', [ChatController::class, 'index'])->name('chats');
 //Route::get('/chats/{chat}/show', [ChatController::class, 'show'])->name('chats.show');

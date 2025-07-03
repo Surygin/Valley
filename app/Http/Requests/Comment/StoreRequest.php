@@ -22,10 +22,9 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'author' => 'required|string|min:2|max:255',
+            'profile_id' => 'required|int|exists:profiles,id',
             'content' => 'required|string',
-            'like' => 'required|numeric',
-            'post' => 'required|string|min:2|max:255',
+            'post_id' => 'required|int',
             'parent' => 'required|string|min:2|max:255'
         ];
     }

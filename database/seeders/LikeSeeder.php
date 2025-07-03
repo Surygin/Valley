@@ -17,7 +17,7 @@ class LikeSeeder extends Seeder
     {
         $i = 1;
 
-        while ($i <= 30):
+        while ($i <= 100):
             $randomProfile = Profile::all()->random();
             $randomPost = Post::all()->random();
             $randomComment = Comment::all()->random();

@@ -20,6 +20,7 @@ class Profile extends Model
         'phone',
         'address',
         'login',
+        'user_id'
     ];
 
     public function user(): BelongsTo

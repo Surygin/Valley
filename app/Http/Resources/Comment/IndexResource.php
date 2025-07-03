@@ -19,7 +19,7 @@ class IndexResource extends JsonResource
             'author' => $this->author,
             'content' => $this->content,
             'like' => $this->like,
-            'post' => $this->post,
+            'post' => $this->post->id,
             'parent' => $this->parent,
         ];
     }
