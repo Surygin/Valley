@@ -22,7 +22,7 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
+                        <a class="nav-link" href="{{ route('posts') }}">Posts</a>
                     </li>
                 </ul>
                 <form class="d-flex d-none" role="search">

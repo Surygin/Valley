@@ -20,8 +20,9 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
-            $table->string('login')->nullable();
+            $table->foreignId('user_id')->index()->constrained('users');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

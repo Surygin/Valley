@@ -34,27 +34,35 @@ class GoCommand extends Command
      */
     public function handle()
     {
-        Profile::create([
-            'name' => 'Tony',
-            'surname' => 'Basco',
-            'birthday_at' => '2000-10-07',
-        ]);
 
+        $post = Comment::all()->random();
+        dd($post->likes);
+//        $chat = Chat::find(6);
+//        dd($chat->messages);
+
+//        dd(Profile::all()->random()->id);
+//        dd(now());
+//        Profile::create([
+//            'name' => 'Tony',
+//            'surname' => 'Basco',
+//            'birthday_at' => '2000-10-07',
+//        ]);
+//
 //        Chat::create([
 //            'title' => 'asd',
 //            'author' => 'Tony'
 //        ]);
-
+//
 //        Image::create([
 //            'img_path' => 'default.jpg'
 //        ]);
-
+//
 //        Message::create([
 //            'author' => 'Tony',
 //            'chat' => '1',
 //            'content' => 'Hello!'
 //        ]);
-
+//
 //        Role::create(
 //            [
 //                'title' => 'admin',
@@ -63,21 +71,21 @@ class GoCommand extends Command
 //                'title' => 'user'
 //            ]
 //        );
-
+//
 //        Tag::create([
 //            'title' => 'PHP'
 //        ]);
 //        Category::create([
 //            'title' => 'IT'
 //        ]);
-
+//
 //        Comment::create([
 //            'author' => 'Tony',
 //            'content' => 'This is Like!',
 //            'post' => '1',
 //            'parent' => '1',
 //        ]);
-
+//
 //        Post::create([
 //            'author' => 'Tony',
 //            'title' => 'My first Post!',

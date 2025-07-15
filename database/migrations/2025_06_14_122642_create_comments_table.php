@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
 
-            $table->string('author');
             $table->text('content');
-            $table->unsignedInteger('like')->default(0);
-            $table->string('post')->index();
+            $table->foreignId('profile_id')->index()->constrained('profiles');
+            $table->foreignId('post_id')->index()->constrained('posts');
             $table->string('parent')->index();
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }
