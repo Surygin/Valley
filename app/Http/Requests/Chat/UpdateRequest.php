@@ -23,7 +23,14 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title' => 'nullable|string',
-            'author' => 'nullable|string',
+            'author' => 'nullable|integer|exists:profiles,id',
         ];
+    }
+
+    public function passedValidation()
+    {
+        return $this->merge([
+            'profile_id' => $this->author
+        ]);
     }
 }

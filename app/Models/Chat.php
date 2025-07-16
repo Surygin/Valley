@@ -12,7 +12,7 @@ class Chat extends Model
 
     protected $fillable = [
         'title',
-        'author',
+        'profile_id'
     ];
 
     public function messages(): HasMany

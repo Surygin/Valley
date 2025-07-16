@@ -11,8 +11,8 @@ class Message extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'author',
-        'chat',
+        'profile_id',
+        'chat_id',
         'content',
     ];
 

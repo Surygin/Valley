@@ -23,7 +23,14 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'author' => 'required|string',
+            'author' => 'required|integer|exists:profiles,id',
         ];
+    }
+
+    public function passedValidation()
+    {
+        return $this->merge([
+            'profile_id' => $this->author
+        ]);
     }
 }

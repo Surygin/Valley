@@ -16,7 +16,7 @@ class ShowResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'author' => $this->author,
+            'author' => $this->profile_id,
             'chat' => $this->chat,
             'content' => $this->content,
         ];
