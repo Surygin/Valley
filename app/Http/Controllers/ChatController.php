@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Chat\StoreRequest;
 use App\Models\Chat;
 use App\Models\Profile;
 use Illuminate\Http\Request;
@@ -14,14 +15,14 @@ class ChatController extends Controller
         return Chat::all();
     }
 
-    public function store()
+    public function store(StoreRequest $request)
     {
-        $randomProfile = Profile::all()->random();
+        $data = $request->validationData();
 
-        return Chat::create([
-            'title' => fake()->title,
-            'author' => $randomProfile->name .' '. $randomProfile->surname,
-        ]);
+        dd($data);
+
+        return Chat::create($data);
+
     }
 
     public function show(Chat $chat)

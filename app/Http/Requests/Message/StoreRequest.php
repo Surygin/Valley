@@ -22,9 +22,16 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'author' => 'required|string|min:2|max:255',
-            'chat' => 'required|string|max:255',
+            'author' => 'required|integer|exists:profiles,id',
+            'chat_id' => 'required|integer|exists:chats,id',
             'content' => 'required|string|min:2|max:255',
         ];
+    }
+
+    protected function passedValidation()
+    {
+        return $this->merge([
+            'profile_id' => $this->author
+        ]);
     }
 }

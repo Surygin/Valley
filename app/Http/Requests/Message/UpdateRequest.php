@@ -22,9 +22,16 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'author' => 'nullable|string|min:2|max:255',
+            'author' => 'nullable|integer|exists:profiles,id',
             'chat' => 'nullable|string|max:255',
             'content' => 'nullable|string|min:2|max:255',
         ];
+    }
+
+    protected function passedValidation()
+    {
+        return $this->merge([
+            'profile_id' => $this->author
+        ]);
     }
 }
