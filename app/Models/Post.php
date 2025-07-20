@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use App\Observers\PostObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[ObservedBy(PostObserver::class)]
 class Post extends Model
 {
     use HasFactory, SoftDeletes;
@@ -15,14 +18,13 @@ class Post extends Model
     protected $fillable = [
         'title',
         'description',
-        'author',
+        'profile_id',
         'tag',
-        'img_path',
         'content',
         'published_at',
         'views',
         'status',
-        'category',
+        'category_id',
         'is _active',
     ];
 
@@ -34,5 +36,10 @@ class Post extends Model
     public function likes(): MorphMany
     {
         return $this->morphMany(Like::class, 'likeable');
+    }
+
+    public function logers(): MorphMany
+    {
+        return $this->morphMany(Loger::class, 'logerable');
     }
 }
